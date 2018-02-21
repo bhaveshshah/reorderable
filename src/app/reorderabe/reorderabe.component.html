@@ -1,0 +1,15 @@
+<div id="container">
+  <div id="main">
+    <ul>
+      <li *ngFor="let list of data; let i = index">
+        <div>
+          <img [src]="list.image" alt="image">
+          <span>{{list.text}}</span>
+          <i *ngIf="i !== 0" class="fa fa-arrow-up" id="up" (click)="moveItemUp(i)"></i>
+          <i *ngIf="i !== (data.length - 1)" class="fa fa-arrow-down" id="down" (click)="moveItemDown(i)"></i>
+          <i class="fa fa-times" id="remove" (click)="removeItem(i)"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
